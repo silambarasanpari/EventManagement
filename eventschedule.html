@@ -74,7 +74,7 @@
           </ul>
         </li>
 		<li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-time"></i><span>Program</span> <b class="caret"></b></a>
-          <ul class="dropdown-menu">
+         <ul class="dropdown-menu">
             <li><a href="envisioningmeeting.html"><i class="icon-external-link"></i> Envisioing Meeting</a></li>
             <li><a href="eventschedule.html"><i class="icon-calendar"></i> Event Schedule</a></li>
             <li><a href="taskchecklist.html"><i class="icon-check"></i> Task Checklist</a></li>
@@ -179,53 +179,19 @@
     <div class="container">
       <div class="row" >
 	<div class="span1">
-		<button type="submit"><a href="riskmgt.html"><i class=" icon-arrow-left"></i>Previous</a></button>
+		<button type="submit"><a href="envisioningmeeting.html"><i class=" icon-arrow-left"></i>Previous</a></button>
 	</div>
 		
         <div class="span9" >
           <!-- /widget -->
-          <div class="widget widget-nopad" style="height:500px;">
-            <div class="widget-header"> <i class="icon-eye-open"></i>
-              <h3>Event Overview</h3>
+          <div class="widget widget-nopad">
+            <div class="widget-header"> <i class="icon-calendar"></i>
+              <h3>Event Schedule</h3>
             </div>
             <!-- /widget-header -->
-            <div class="widget-content" >
-              <br>
-				<form id="edit-profile" class="form-horizontal">
-									<fieldset>
-										<div class="control-group">											
-											<label class="control-label" for="title">Event Title</label>
-											<div class="controls">
-												<input type="text" class="span4" id="title" >
-											</div> <!-- /controls -->				
-										</div>
-										<div class="control-group">											
-											<label class="control-label" for="eventdate">Event Date / Time</label>
-											<div class="controls">
-												<input type="text" class="span4" id="eventdate">
-											</div> <!-- /controls -->				
-										</div> <!-- /control-group -->
-										
-										
-										<div class="control-group">											
-											<label class="control-label" for="location">Event Locations</label>
-											<div class="controls">
-												<input type="text" class="span4" id="location">
-											</div> <!-- /controls -->				
-										</div>
-										<div class="control-group">											
-											<label class="control-label" for="description">Event Description</label>
-											<div class="controls">
-												<input type="text" class="span4" id="description">
-											</div> <!-- /controls -->				
-										</div>
-										
-										<div class="control-group" style="margin-left:30%;">
-											<button type="submit" class="btn btn-success">Save</button> 
-											<button class="btn">Cancel</button>
-										</div>
-									</fieldset>
-			</form>
+			<div class="widget-content">
+              <div id='calendar' >
+              </div>
             </div>
             <!-- /widget-content --> 
           </div>
@@ -233,7 +199,7 @@
         </div>
 		
 		<div class="span1">
-		<button type="submit"><a href="timeline.html"><i class=" icon-arrow-right"></i><br>Next</a></button>
+		<button type="submit"><a href="taskchecklist.html"><i class=" icon-arrow-right"></i><br>Next</a></button>
 		</div>
         <!-- /span6 --> 
 	  
@@ -264,7 +230,6 @@
 <!-- /footer --> 
 <!-- Le javascript
 ================================================== --> 
-<!-- Placed at the end of the document so the pages load faster --> 
 <script src="js/jquery-1.7.2.min.js"></script> 
 <script src="js/excanvas.min.js"></script> 
 <script src="js/chart.min.js" type="text/javascript"></script> 
@@ -272,5 +237,87 @@
 <script language="javascript" type="text/javascript" src="js/full-calendar/fullcalendar.min.js"></script>
  
 <script src="js/base.js"></script> 
+<script>     
+
+     
+
+        $(document).ready(function() {
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+        var calendar = $('#calendar').fullCalendar({
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+          },
+          selectable: true,
+          selectHelper: true,
+          select: function(start, end, allDay) {
+            var title = prompt('Event Title:');
+            if (title) {
+              calendar.fullCalendar('renderEvent',
+                {
+                  title: title,
+                  start: start,
+                  end: end,
+                  allDay: allDay
+                },
+                true // make the event "stick"
+              );
+            }
+            calendar.fullCalendar('unselect');
+          },
+          editable: true,
+          events: [
+            {
+              title: 'All Day Event',
+              start: new Date(y, m, 1)
+            },
+            {
+              title: 'Long Event',
+              start: new Date(y, m, d+5),
+              end: new Date(y, m, d+7)
+            },
+            {
+              id: 999,
+              title: 'Repeating Event',
+              start: new Date(y, m, d-3, 16, 0),
+              allDay: false
+            },
+            {
+              id: 999,
+              title: 'Repeating Event',
+              start: new Date(y, m, d+4, 16, 0),
+              allDay: false
+            },
+            {
+              title: 'Meeting',
+              start: new Date(y, m, d, 10, 30),
+              allDay: false
+            },
+            {
+              title: 'Lunch',
+              start: new Date(y, m, d, 12, 0),
+              end: new Date(y, m, d, 14, 0),
+              allDay: false
+            },
+            {
+              title: 'Birthday Party',
+              start: new Date(y, m, d+1, 19, 0),
+              end: new Date(y, m, d+1, 22, 30),
+              allDay: false
+            },
+            {
+              title: 'EGrappler.com',
+              start: new Date(y, m, 28),
+              end: new Date(y, m, 29),
+              url: 'http://EGrappler.com/'
+            }
+          ]
+        });
+      });
+    </script><!-- /Calendar -->
 </body>
 </html>
