@@ -13,7 +13,7 @@
 <link href="css/font-awesome1.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/pages/dashboard.css" rel="stylesheet">
-
+ 
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -118,19 +118,19 @@
           </ul>
         </li>
 		<li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class=" icon-random"></i><span>Procurement</span> <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="icons.html"><i class="icon-pushpin"></i>Apparels</a></li>
-            <li><a href="faq.html"><i class="icon-gift"></i>Gifts</a></li>
-            <li><a href="pricing.html"><i class="icon-music"></i>Music</a></li>
-            <li><a href="login.html"><i class="icon-camera"></i>Photography</a></li>
-            <li><a href="signup.html"><i class="icon-leaf"></i>Flowers</a></li>
-            <li><a href="error.html"><i class="icon-heart"></i>Decoration</a></li>
-			<li><a href="error.html"><i class="icon-paper-clip"></i>Staionarys</a></li>
+           <ul class="dropdown-menu">
+               <li><a href="aparels.html"><i class="icon-pushpin"></i>Apparels</a></li>
+               <li><a href="gifts.html"><i class="icon-gift"></i>Gifts</a></li>
+               <li><a href="music.html"><i class="icon-music"></i>Music</a></li>
+               <li><a href="photography.html"><i class="icon-camera"></i>Photography</a></li>
+               <li><a href="flowers.html"><i class="icon-leaf"></i>Flowers</a></li>
+               <li><a href="decoration.html"><i class="icon-heart"></i>Decoration</a></li>
+               <li><a href="staionarys.html"><i class="icon-paper-clip"></i>Staionarys</a></li>
           </ul>
         </li>
 		<li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class=" icon-road"></i><span>Travel</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="icons.html"><i class="icon-truck"></i>Transportation</a></li>
+            <li><a href="transporation.html"><i class="icon-truck"></i>Transportation</a></li>
       
           </ul>
         </li>
@@ -191,41 +191,30 @@
             <!-- /widget-header -->
             <div class="widget-content" >
               <br>
-				<form id="edit-profile" class="form-horizontal">
-									<fieldset>
-										<div class="control-group">											
-											<label class="control-label" for="title">Event Title</label>
-											<div class="controls">
-												<input type="text" class="span4" id="title" >
-											</div> <!-- /controls -->				
-										</div>
-										<div class="control-group">											
-											<label class="control-label" for="eventdate">Event Date / Time</label>
-											<div class="controls">
-												<input type="text" class="span4" id="eventdate">
-											</div> <!-- /controls -->				
-										</div> <!-- /control-group -->
-										
-										
-										<div class="control-group">											
-											<label class="control-label" for="location">Event Locations</label>
-											<div class="controls">
-												<input type="text" class="span4" id="location">
-											</div> <!-- /controls -->				
-										</div>
-										<div class="control-group">											
-											<label class="control-label" for="description">Event Description</label>
-											<div class="controls">
-												<input type="text" class="span4" id="description">
-											</div> <!-- /controls -->				
-										</div>
-										
-										<div class="control-group" style="margin-left:30%;">
-											<button type="submit" class="btn btn-success">Save</button> 
-											<button class="btn">Cancel</button>
-										</div>
-									</fieldset>
-			</form>
+			<div class="shortcuts" data-toggle="buttons" >
+      <label class="shortcut">
+       <a href="aparels.html"><input type="radio"  name="options" id="option1" autocomplete="off" value="Hall" class="radio"> <i class="shortcut-icon icon-pushpin"></i><span class="shortcut-label">Apparels</span></a>
+      </label>
+      <label class="shortcut">
+       <a href="icons.html"> <input type="radio" name="options" id="option2" autocomplete="off" value="Indoors" class="radio"> <i class="shortcut-icon icon-gift"></i><span class="shortcut-label">Gifts</span> </a>
+      </label>
+	  <label class="shortcut">
+        <a href="icons.html"><input type="radio" name="options" id="option3" autocomplete="off" value="Parklands" class="radio"> <i class="shortcut-icon icon-music"></i> <span class="shortcut-label">Music</span></a>
+      </label>
+	  <label class="shortcut">
+       <a href="icons.html"> <input type="radio" name="options" id="option4" autocomplete="off" value="Stadium" class="radio"><i class="shortcut-icon icon-camera"></i><span class="shortcut-label">Photography</span></a>
+      </label>
+       <label class="shortcut">
+       <a href="icons.html"> <input type="radio" name="options" id="option5" autocomplete="off" value="Indoors" class="radio"> <i class="shortcut-icon icon-leaf"></i><span class="shortcut-label">Flowers</span> </a>
+      </label>
+	  <label class="shortcut">
+       <a href="icons.html"> <input type="radio" name="options" id="option6" autocomplete="off" value="Parklands" class="radio"> <i class="shortcut-icon icon-heart"></i> <span class="shortcut-label">Decoration</span></a>
+      </label>
+	  <label class="shortcut">
+       <a href="icons.html"> <input type="radio" name="options" id="option7" autocomplete="off" value="Stadium" class="radio"><i class="shortcut-icon icon-paper-clip"></i><span class="shortcut-label">Staionarys</span></a>
+      </label>
+	  
+</div>
             </div>
             <!-- /widget-content --> 
           </div>

@@ -142,7 +142,7 @@
         	
 			$list.find ('li').each (function (i) {				
 				var id = parseInt (i+1);							
-				html += '<li>' + id + '. <a href="#faq-' + id + '">' + $(this).find ('h4').text () + '</a></li>';								
+				// html += '<li>' + id + '. <a href="#faq-' + id + '">' + $(this).find ('h4').text () + '</a></li>';								
 				$(this).attr ('id', 'faq-' + id);				
 			});	
 					
