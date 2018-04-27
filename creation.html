@@ -240,9 +240,6 @@
  
 <script src="js/base.js"></script> 
 <script>     
-
-     
-
         $(document).ready(function() {
         var date = new Date();
         var d = date.getDate();
@@ -257,7 +254,11 @@
           selectable: true,
           selectHelper: true,
           select: function(start, end, allDay) {
-            var title = prompt('Event Title:');
+            // var title = prompt('Event Title:');
+            function title()
+            {
+              alert("asdasd");
+            }
             if (title) {
               calendar.fullCalendar('renderEvent',
                 {
@@ -275,6 +276,7 @@
           events: [
             {
               title: 'All Day Event',
+          
               start: new Date(y, m, 1)
             },
             {
